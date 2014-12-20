@@ -50,5 +50,3 @@ Parenthesis was removed and "-" was change to "_" from the names of 'data2' usin
 melt() function was used to transform 'data2' from a wide data frame into a long data frame 'data2Melt'. 
 
 group_by() and summarise() function were used to generate the tidy data set 'data3' with the average of each variable for each subject and each activity. 
-
-colnames() function was used to change to names of 'data3' into more descriptive names to generate the final tidy data. 

@@ -32,8 +32,9 @@ names(data2)<-gsub("-","_",names(data2))
 library(dplyr)
 library(reshape2)
 data2Melt<-melt(data2,id=c("subject","activity"),measure.vars=names(data2)[1:66])  ##reshape the data frame from wide to long data frame. 
-data2group<-group_by(data2Melt,subject,activity,variable)  
-head(data2group)
-data3<-summarise(data2group,mean(value))    ##generate the data frame with average of each variable for each subject and each activity. 
-colnames(data3)[3:4]<-c("feature","meanvalue")
-write.table(data3,"tidydata.txt",row.name=FALSE)
+head(data2Melt)
+colnames(data2Melt)[3]<-"feature"
+data2Melt%>%
+group_by(subject,activity,feature)%>%  
+summarise(meanvalue=mean(value))%>%    ##group by subject, activity and features, and generate the data frame with average of each variable for each subject and each activity. 
+write.table("tidydata.txt",row.name=FALSE)
