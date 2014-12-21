@@ -35,9 +35,9 @@ dim() function was used to check the dimension of each data frame:
 
 * 'test_subject' has 2947 rows and 1 column.
 
-cbind() function was used to bind the 'train_x', 'train_y' and 'train_subject' into dataframe 'train', and to bind 'test_x', 'test_y' and 'test_subject' into data frame 'test'. 
+Bind the 'train_x', 'train_y' and 'train_subject' into dataframe 'train', and to bind 'test_x', 'test_y' and 'test_subject' into data frame 'test' using cbind() function, then bind data frame 'train' and 'test' into data frame 'data' 
 
-rbind() function was used to bind data frame 'train' and 'test' into data frame 'data'. 
+using rbind() function. 
 
 The index of the feature vairables on mean and standard deviation were extracted from 'features' using grep() function. 
 
@@ -49,4 +49,4 @@ Parenthesis was removed and "-" was change to "_" from the names of 'data2' usin
 
 melt() function was used to transform 'data2' from a wide data frame into a long data frame 'data2Melt'. 
 
-group_by() and summarise() function were used to generate the tidy data set 'data3' with the average of each variable for each subject and each activity. 
+group_by() and summarise() function were used to generate the final tidy data set with the average of each variable for each subject and each activity. 
